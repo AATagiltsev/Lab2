@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/goodsApp.js"></script>
+    <script src="scripts/goodsController.js"></script>
+    <script src="scripts/copyrightDirective.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="goodsApp" ng-controller="goodsController">
+    <h1>Lab 2</h1>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Сумма</th>
+            </tr>
+            <tr ng-repeat="g in goods">
+                <td>{{g.title}}</td>
+                <td>{{g.quantity}}</td>
+                <td>{{g.price}}</td>
+                <td>{{g.quantity*g.price}}</td>
+            </tr>
+            <tr>
+                <th colspan="3">Всего: </th>
+                <th>{{ getSumma()}}</th>
+
+            </tr>
+        </table>
+        <copyright data-goods-directive/>
+    </div>
+</body>
+</html>
