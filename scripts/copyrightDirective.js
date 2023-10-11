@@ -1,7 +1,7 @@
 ﻿angular.module("goodsApp").
     directive("copyright", function () {
         return {
-            restrict: "E",
+            restrict: "EA",
             template: "Copyright " + (new Date()).getFullYear()
         };
     });
